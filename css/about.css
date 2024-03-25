@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Work Sans', sans-serif;
+    color: #fff;
+}
+
+/*Navigation bar sticky*/
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+    letter-spacing: 1px;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 50px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #79c1c7;
+}
+
+/*main background and snap scroll effect*/
+
+body {
+    background: url(../images/bluewaves.jpg) no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: opacity(1);
+    pointer-events: auto;
+    transition: 0.3s ease;
+}
+
+
+
+.container {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;   
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+ .about-1, .about-2, .about-3 {
+
+    background-color:rgb(2, 5, 58, 0.2);
+    background-size: cover;
+    background-position: center;
+    width: 100%;   
+}
+
+.about-content-1 h1, .about-content-2 h1, .about-content-3 h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 5%;
+}
+
+/*Section 1*/
+
+
+.about-content-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 2%;
+    border-radius: 30px;
+    background: rgba(254, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    max-width:50%;
+}
+
+
+.about-content-1 p, .about-content-2 p, .about-content-3 p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 15pt;
+    margin-bottom:3%;
+}
+
+/*Section 2*/
+
+.about-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.about-2 h1 {
+    padding-bottom: 5%;
+}
+
+.about-2 .container-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.about-2 .about-values {
+    display: flex;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 2rem;
+    list-style-type: none;
+}
+
+.about-values .card {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(254, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+}
+
+.about-values li:hover {
+    background: rgba(128, 127, 127, 0.2);
+    backdrop-filter: blur(25px);
+}
+
+.about-values h2 {
+    padding-bottom: 30px;
+}
+
+.about-values p {
+    margin: 0;
+    padding:0;
+    text-align: center;
+}
+
+/*Section 3*/
+
+.about-content-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 3%;
+    border-radius: 30px;
+    background: rgba(254, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    max-width:50%;
+}
+
+.goals {
+    padding-left: 10px;
+}
+
+/* All rights reserved */
+
+.rights {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.rights p {
+    color:rgb(222, 229, 236);
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-bottom: 40px;
+}
+
+
+
+
+
