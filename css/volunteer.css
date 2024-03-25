@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Work Sans', sans-serif;
+    color: #fff;
+}
+
+/*Navigation bar sticky*/
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
+    letter-spacing: 1px;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 50px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #79c1c7;
+}
+
+body {
+    background: url(../images/bluewaves.jpg) no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: opacity(1);
+    pointer-events: auto;
+    transition: 0.3s ease;
+}
+
+
+
+.main {
+   /* background: url(../images/bluewaves.jpg) no-repeat;*/
+    background-color:rgb(2, 5, 58, 0.2);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+    transition: 0.3s ease;
+}
+
+/*Section 1 Intro text*/
+
+.intro {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    width: 40%;
+
+}
+
+.intro-text {
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/*Section 2 Carrousel*/
+
+.carousel {
+    margin: 1% auto;
+    width: 45%; 
+}
+
+img {
+    border-radius: 50px;
+    filter:opacity(0.8);  
+}
+
+.carousel h5 {
+    font-size: 1.4rem; 
+    font-weight: 400;
+    color: rgb(230, 234, 234);
+    letter-spacing: 1px;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(230, 234, 234);
+}
+
+.carousel-caption {
+    padding: 15px;
+    margin: 0;
+    border-radius: 5px;
+    background:rgba(128, 128, 130, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+/* All rights reserved */
+
+.rights {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.rights p {
+    color:rgb(222, 229, 236);
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+}
