@@ -7,7 +7,7 @@
 
 body {
     color: #fff;
-    /* background: #09001d; */
+    background: #09001d;
     overflow:hidden;
 }
 
@@ -60,8 +60,18 @@ body {
 }
 
 .main.active {  
-    pointer-events: none;
+    filter: opacity(1);
+    pointer-events: auto;
+ 
 }
+
+
+.main {
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    height: 100vh;   
+}
+
 
 .container {
     display:flex;
@@ -69,12 +79,15 @@ body {
     width: 200%;
 }
 
+
+
 .home {
     position: relative;
     left: -50%;
     height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -132,40 +145,6 @@ body {
     box-shadow: none;
 }
 
-
-/* @media (max-width:600px) { 
-    .home {
-        position: relative;
-        left: -50%;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-    }
-    
-    .home-content {
-        max-width: 380px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-    
-    .home-content.active {
-        max-width: 380px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-
-
-
-
-}*/
 .popup-info {
     position: absolute;
     top: 50%;
@@ -254,7 +233,7 @@ body {
 
 .quiz-section {
     position: relative;
-    left: -100%;
+    left: -50%;
     width: 100%;
     background: rgba(2, 49, 77, 1);
     display: flex;
@@ -267,29 +246,6 @@ body {
 
 .quiz-section.active {
     left:0;
-}
-
-@media (max-width: 840px) {
-    .container .quiz-section {
-        position: relative;
-        left: -100%;
-        width: 100%;
-        background: rgba(2, 49, 77, 1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: .8s ease-in-out;
-        transition-delay: .15s;
-        z-index:100;
-    }
-    
-    .quiz-section.active {
-        left:0;
-    }
-
-
-
-
 }
 
 .quiz-section .quiz-box {
@@ -371,21 +327,24 @@ body {
 .option-list .option:hover {
     background: rgba(0, 0, 0, .3);
     border: 1px solid rgba(0, 0, 0, .1);
+    backdrop-filter: blur(5px);
 }
 
 .option-list .option.correct {
-    background:rgba(24, 148, 146, 0.8);
+    background:rgba(142, 191, 43, 0.8);
     color: #fff;
     font-weight: 500;
-    border-color:rgba(24, 148, 146, 0.8);
+    border-color:rgba(142, 191, 43, 0.8);
+    backdrop-filter: blur(5px);
 }
 
 
 .option-list .option.incorrect {
-    background:rgba(148, 24, 65, 0.8);
+    background:rgba(205, 40, 48, 0.8);
     color: #fff;
     font-weight: 500;
-    border-color:rgba(148, 24, 65, 0.8);
+    border-color:rgba(205, 40, 48, 0.8);
+    backdrop-filter: blur(15px);
 }
 
 .option-list .option.disabled {
@@ -555,169 +514,51 @@ body {
     color: #fff;
 }
 
-/* HELP FOOTER MENUS */
-
-.container-menus {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items:center;
-    text-align:center;
-    padding-top: 60px;
-    padding-bottom: 10px;
-    background-color:rgb(255, 244, 238);
-    font-family: "Montserrat", sans-serif;
-    color:rgb(100, 100, 100, 1);
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-.container-menus h3 {
-    justify-content:center;
-    align-items:center;
-    margin: 10 auto;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    letter-spacing: 1.5px;
-    
-}
-
-.about-us-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align:center;
-    list-style-type: none;
-    margin-top: 20px;
-    letter-spacing: 0.5px;
-}
-
-.about-us-menu ul, .customer-care-menu ul {
-    list-style-type: none;
-    text-decoration: none;
-    padding: 10px 0;
-}
-
-.about-us-menu li, .customer-care-menu li {
-    padding: 5px 0;
-}
-
-.about-us-menu ul li:hover {
-    color: rgba(223, 95, 52, 0.9);
-    font-weight:500;
-
-}
-
-.customer-care-menu ul li:hover {
-    color: rgba(223, 95, 52, 0.9);
-    font-weight:500;
-}
-
-.customer-care-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align:center;
-    letter-spacing: 0.5px;
-}
-
-@media (min-width: 768px) {
-
-    .container-menus {
-        flex-direction:row;
-        text-align: left;
-        align-items: flex-start;
-        gap: 100px;
-        padding-left:15%;
-        padding-right:15%;
-    }
-
-    .customer-care-menu h3 {
-        justify-content: left;
-        align-items:left;
-        text-align:left;
-    }
-
-    
-    .customer-care-menu {
-        align-items:left;
-        text-align:left;
-    }
-
-    .container-menus .about-us-menu {
-        margin-top: 0;
-        align-items: left;
-        text-align:left;  
-    }
-
-    .container-menus h3 {
-        justify-content:left;
-        align-items:left;    
-    }
-}
-
-@media (min-width: 950px) {
-
-    .container-menus {
-        padding-left:20%;
-        padding-right:20%;
-    }
-}
-/* Socials */
-
-.socials {
-    padding: 0 15px 20px 15px;
-    background-color:rgb(255, 244, 238);
-}
-
-
-.socials ul {
-    text-decoration: none;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-}
-
-.bi-instagram, .bi-tiktok, .bi-facebook {
-
-    background-color:rgba(223, 95, 52, 0.8);
-    border-radius: 50%;
-    padding: 10px 13px;
-    color: white;
-    font-size: 1rem;
-}
-
-
 
 /* All rights reserved */
 
 .rights {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
-    font-family: "Montserrat", sans-serif;
-    color:rgb(100, 100, 100, 1);
-    font-weight: 300;
-    padding: 10px;
-    background-color:rgb(255, 244, 238);
     margin: 0;
 }
 
 .rights p {
-    font-family: "Montserrat", sans-serif;
-    color:rgb(100, 100, 100, 1);
+    color:rgb(222, 229, 236);
     font-weight: 400;
-    font-size: 0.8rem;
-    padding: 10px;
-    padding-bottom: 30px;
+    font-size: 0.9rem;
+    padding-bottom: 40px;
 }
 
-@media (min-width: 768px) {
 
-    .rights {
-        padding-top:20px;
-        padding-bottom: 20px;
+/* RESPONSIVE */
+
+@media (max-width: 420px) {
+    
+    .home-content {
+        /* max-width: 300px; */
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 15px 15px;
+    }
+
+}
+
+/* For screens between 768px and 950px */
+@media (min-width: 768px) and (max-width: 949px) {
+    /* Adjust styles for medium screens here */
+}
+
+/* For screens larger than 950px */
+@media (min-width: 950px) {
+    /* Adjust styles for larger screens here */
 }
